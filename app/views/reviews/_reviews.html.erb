@@ -7,12 +7,10 @@
         <%= review.author %> |
         <%= review.content %>
         <% if current_user && current_user.admin %>
-          <button>
             <%= link_to "Delete", product_review_path(@product, review),
               :data => {:confirm => "Are you sure?",
               :method => "delete"}, class:"delete-review"
             %>
-          </button>
         <% end %>
       </li>
     <% end %>

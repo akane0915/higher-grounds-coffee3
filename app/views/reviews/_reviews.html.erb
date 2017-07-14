@@ -1,0 +1,22 @@
+<h3>Reviews:</h3>
+
+<% if @product.reviews.any? %>
+  <ul>
+    <% @product.reviews.each do |review| %>
+      <li>
+        <%= review.author %> |
+        <%= review.content %>
+        <% if current_user && current_user.admin %>
+          <button>
+            <%= link_to "Delete", product_review_path(@product, review),
+              :data => {:confirm => "Are you sure?",
+              :method => "delete"}, class:"delete-review"
+            %>
+          </button>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no reviews yet!</p>
+<% end %>

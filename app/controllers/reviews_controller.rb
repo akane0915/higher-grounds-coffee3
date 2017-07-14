@@ -13,7 +13,10 @@ class ReviewsController < ApplicationController
     @review = @product.reviews.new(review_params)
     if @review.save
       flash[:notice] = "Review created."
-      redirect_to product_path(@product)
+      respond_to do |format|
+        format.html { redirect_to product_path(@product) }
+        format.js
+      end
     else
       render :new
     end

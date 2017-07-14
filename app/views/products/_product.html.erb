@@ -1,0 +1,8 @@
+<h1><%= @product.name %> Coffee</h1>
+
+<br>
+<%= image_tag(@product.image, class: "coffee-detail-image") %>
+<p>Description: <%= @product.description %></p>
+<p>Price: <%= number_to_currency(@product.price) %></p>
+<p>Origin: <%= @product.origin %></p>
+<p>Variety: <%= @product.variety %></p>

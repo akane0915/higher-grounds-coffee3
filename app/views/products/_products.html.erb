@@ -4,6 +4,7 @@
       <p><%= product.name %></p>
       <p><%= product.description%></p>
       <p><%= number_to_currency(product.price)%></p>
+      <%= image_tag(product.image, class: "coffee-detail-image") %>
     </div>
     <% end %>
   <% end %>
